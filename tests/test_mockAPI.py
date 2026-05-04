@@ -1,5 +1,5 @@
 import pytest
-from MockAPI import app
+from AUTOMATION.MockAPI import app
 
 @pytest.fixture
 def client():
