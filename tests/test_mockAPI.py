@@ -1,5 +1,5 @@
 import pytest
-from AUTOMATION.MockAPI import app
+from src.MockAPI import app
 
 @pytest.fixture
 def client():
@@ -22,9 +22,9 @@ def test_mock_get_request_success(client, monkeypatch):
     """
 
     # Mock global variables inside your app
-    import MockAPI
-    MockAPI.mock_method = "GET"
-    MockAPI.mock_response = {"status": "success"}
+    import src.MockAPI
+    src.MockAPI.mock_method = "GET"
+    src.MockAPI.mock_response = {"status": "success"}
 
     response = client.get("/mock")
 
@@ -37,9 +37,9 @@ def test_mock_post_wrong_method(client, monkeypatch):
     Validate incorrect method handling
     """
 
-    import MockAPI
-    MockAPI.mock_method = "GET"
-    MockAPI.mock_response = {"status": "success"}
+    import src.MockAPI
+    src.MockAPI.mock_method = "GET"
+    src.MockAPI.mock_response = {"status": "success"}
 
     response = client.post("/mock")
 
