@@ -22,7 +22,7 @@ def get_user_input():
 
     try:
         mock_response = json.loads(response_input)
-    except json.JONDecodeError:
+    except json.JSONDecodeError:
         print("Invalid JSON. Using default response.")
         mmock_response = {"message": "Invalid JSON provided"}
 
