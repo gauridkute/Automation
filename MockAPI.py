@@ -12,6 +12,8 @@ def get_user_input():
     
     # Input for method
     method = input("Enter HTTP method to mock (GET/POST/PUT/DELETE): ").upper()
+    while method not in ["GET", "POST", "PUT", "DELETE"]:
+        method = input("Invalid method. Enter GET/POST/PUT/DELETE: ").upper()
 
 
 mock_method = method
