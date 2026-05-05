@@ -16,7 +16,7 @@ def test_mock_endpoint_without_setup(client):
     assert response.status_code in [405, 500]
 
 
-def test_mock_get_request_success(client, monkeypatch):
+def test_mock_get_request_success(client):
     """
     Simulate GET method setup and validate response
     """
@@ -32,7 +32,7 @@ def test_mock_get_request_success(client, monkeypatch):
     assert response.json == {"status": "success"}
 
 
-def test_mock_post_wrong_method(client, monkeypatch):
+def test_mock_post_wrong_method(client):
     """
     Validate incorrect method handling
     """
